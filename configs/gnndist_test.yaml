@@ -1,0 +1,74 @@
+SOLVER:
+  gpu: 0,
+  run: train
+
+  logdir: logs/my_test
+  max_epoch: 500
+  test_every_epoch: 20
+  log_per_iter: 10
+  ckpt_num: 5
+  dist_url: tcp://localhost:10266
+
+  # optimizer
+  type: adamw
+  weight_decay: 0.01  # default value of adamw
+  lr: 0.00025       
+
+  # learning rate
+  lr_type: poly
+  lr_power: 0.9
+
+DATA:
+  train:
+    # octree building
+    depth: 6
+    full_depth: 2  #The octree layers with a depth smaller than `full_depth` are forced to be full.
+
+    # data augmentations
+    distort: False
+
+    # data loading
+    location: ./
+    filelist: ./data/tiny/filelist/filelist_train.txt
+    batch_size: 1
+    shuffle: True
+    num_workers: 0
+
+  test:
+    # octree building
+    depth: 6
+    full_depth: 2
+
+    # data augmentations
+    distort: False
+
+    # data loading
+    location: ./
+    filelist: ./data/tiny/filelist/filelist_test.txt
+    batch_size: 4
+    shuffle: True
+    num_workers: 10
+
+MODEL:
+  name: unet
+  feature: PN   # N -> Normal(3 channels);
+                # P -> Points(3 channel)
+  channel: 6
+
+  nout: 256     # the final embedding dimension of each vertices
+  nempty: True
+
+  num_edge_types: 7           # deprecated
+
+  # SAGE, GAT, Edge, DirConv, DistConv, my
+  conv_type: my
+  include_distance: True     # only appliable when use dist conv. if true, the distance between points will be concated to the feature.
+
+  normal_aware_pooling: True  # when grid pooling, consider normal or not
+  
+
+# visualization, will not affect the training/testing process, only visualization
+
+  get_test_stat: False         # if true, evaluate the test set before visualization
+ # test_mesh: 2323             # NOT finished: specify a mesh to evaluate in visualization system
+
