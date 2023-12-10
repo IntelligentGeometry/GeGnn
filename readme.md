@@ -1,19 +1,21 @@
 # Learning the Geodesic Embedding with Graph Neural Networks
 
 
-[Learning the Geodesic Embedding with Graph Neural Networks](https://arxiv.org/abs/2309.05613)
+[**Learning the Geodesic Embedding with Graph Neural Networks**](https://arxiv.org/abs/2309.05613)
 
 [Bo Pang](https://github.com/skinboC), [Zhongtian Zheng](https://github.com/zzttzz), Guoping Wang, and [Peng-Shuai Wang](https://wang-ps.github.io/)
 
 ACM Transactions on Graphics (SIGGRAPH Asia), 42(6), 2023
 
-![](img/teaser.png)
+![](img/teaser.v1.png)
 
-- [1. Environment](#1-environment)
-- [2. Prepare Data](#2-prepare-data)
-- [3. Train](#3-train)
-- [4. Test and Visualization](#4-test-and-visualization)
-- [5. Citation](#5-citation)
+- [Learning the Geodesic Embedding with Graph Neural Networks](#learning-the-geodesic-embedding-with-graph-neural-networks)
+  - [1. Environment](#1-environment)
+  - [2. Prepare Data](#2-prepare-data)
+  - [3. Train](#3-train)
+  - [4. Test and Visualization](#4-test-and-visualization)
+  - [5. Citation](#5-citation)
+
 
 ## 1. Environment
 
@@ -71,9 +73,9 @@ A checkpoint of our model is provided in `pretrained/ours00500.solver.tar`.
 
 ![](img/bunny.jpg)
 
-We provide a script to test the network and visualize the results. The following command test our method on the specified mesh, and will open a polyscope window for visualization. (If you are using ssh and could not open the window, please delete polyscope-related code in `GeGnn_standalong.py`.)
+We provide a script to test the network and visualize the results. The following command tests our method on the specified mesh and will open a polyscope window for visualization. (If you are using ssh and cannot open the window, please delete polyscope-related code in `GeGnn_standalong.py`.)
 
-Feel free to change `--test_file` to test on other meshes, and change `--start_pts` to test on different source points.
+Feel free to change `--test_file` to test on other meshes and change `--start_pts` to test on different source points.
 
 ```shell
 python3 GeGnn_standalong.py --mode SSAD --test_file data/test_mesh/bunny.obj --ckpt_path pretrained/ours00500.solver.tar --start_pts 0 --output out/ssad_ours.npy
@@ -86,10 +88,10 @@ This will open a polyscope window and show the results.
 If you find this project useful for your research, please kindly cite our paper:
 
 ```bibtex 
-@article{pang2023learning,
+@article{pang2023gegnn,
   title={Learning the Geodesic Embedding with Graph Neural Networks},
   author={Pang, Bo and Zheng, Zhongtian and Wang, Guoping and Wang, Peng-Shuai},
-  journal={arXiv preprint arXiv:2309.05613},
+  journal={ACM Transactions on Graphics (SIGGRAPH Asia)},
   year={2023}
 
 }
