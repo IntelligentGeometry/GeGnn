@@ -1,7 +1,7 @@
 # Learning the Geodesic Embedding with Graph Neural Networks
 
 
-[**Learning the Geodesic Embedding with Graph Neural Networks**](https://arxiv.org/abs/2309.05613)
+[**Learning the Geodesic Embedding with Graph Neural Networks**](https://dl.acm.org/doi/10.1145/3618317)
 
 [Bo Pang](https://github.com/skinboC), [Zhongtian Zheng](https://github.com/zzttzz), Guoping Wang, and [Peng-Shuai Wang](https://wang-ps.github.io/)
 
