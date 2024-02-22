@@ -1,10 +1,9 @@
 # Learning the Geodesic Embedding with Graph Neural Networks
 
 
-[**Learning the Geodesic Embedding with Graph Neural Networks**](https://dl.acm.org/doi/10.1145/3618317)
-
-[Bo Pang](https://github.com/skinboC), [Zhongtian Zheng](https://github.com/zzttzz), Guoping Wang, and [Peng-Shuai Wang](https://wang-ps.github.io/)
-
+<!-- [**Learning the Geodesic Embedding with Graph Neural Networks**](https://dl.acm.org/doi/10.1145/3618317) -->
+[**Learning the Geodesic Embedding with Graph Neural Networks**](https://arxiv.org/abs/2309.05613) <br/>
+[Bo Pang](https://github.com/skinboC), [Zhongtian Zheng](https://github.com/zzttzz), Guoping Wang, and [Peng-Shuai Wang](https://wang-ps.github.io/) <br/>
 ACM Transactions on Graphics (SIGGRAPH Asia), 42(6), 2023
 
 ![](img/teaser.v1.png)
@@ -24,7 +23,7 @@ First, please install pytorch that fits your cuda version.
 Then, install torch geometric:
 
 ```
-conda install pyg -c pyg 
+conda install pyg -c pyg
 ```
 
 Then install the packages required by this project:
@@ -81,13 +80,13 @@ Feel free to change `--test_file` to test on other meshes and change `--start_pt
 python3 GeGnn_standalong.py --mode SSAD --test_file data/test_mesh/bunny.obj --ckpt_path pretrained/ours00500.solver.tar --start_pts 0 --output out/ssad_ours.npy
 ```
 
-This will open a polyscope window and show the results. 
+This will open a polyscope window and show the results.
 
 ## 5. Citation
 
 If you find this project useful for your research, please kindly cite our paper:
 
-```bibtex 
+```bibtex
 @article{pang2023gegnn,
   title={Learning the Geodesic Embedding with Graph Neural Networks},
   author={Pang, Bo and Zheng, Zhongtian and Wang, Guoping and Wang, Peng-Shuai},
